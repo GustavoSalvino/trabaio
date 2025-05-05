@@ -1,0 +1,39 @@
+.root {
+    -fx-background-color: #f6f8f0;
+}
+
+#titleLabel {
+    -fx-font-size: 36;
+    -fx-font-family: "Ebrima";
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+}
+
+#textLabel {
+    -fx-font-size: 25;
+    -fx-font-family: "Ebrima";
+    -fx-alignment: center;
+    -fx-padding: 18px;
+}
+
+.separator .line {
+    -fx-background-color: #b5b5b5;
+    -fx-border-color: transparent;
+}
+
+.separator1 .line {
+    -fx-background-color: #b5b5b5;
+    -fx-border-color: transparent;
+}
+
+.separator2 .line {
+    -fx-background-color: #b5b5b5;
+    -fx-border-color: transparent;
+}
+
+#titleLabel2 {
+    -fx-font-size: 36;
+    -fx-font-family: "Ebrima";
+    -fx-alignment: center;
+    -fx-font-weight: bold;
+}

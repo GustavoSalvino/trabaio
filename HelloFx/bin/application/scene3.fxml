@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane fx:id="scrollPane" fitToHeight="false" fitToWidth="true" prefHeight="2230.0" prefWidth="841.0" style="-fx-background: #f6f8f0; -fx-background-color: #f6f8f0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+    <content>
+        <VBox alignment="TOP_CENTER" spacing="10" style="-fx-padding: 20;">
+            <children>
+
+                <!-- Seção de introdução -->
+                <HBox alignment="CENTER" spacing="10">
+                    <children>
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@sustentabilidade.png" />
+                            </image>
+                        </ImageView>
+                        <Label style="-fx-font-size: 40px; -fx-font-weight: bold;" text="O que é Emergia?" />
+                        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@sustentabilidade.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+
+                <Separator prefHeight="2.0" />
+                <Label style="-fx-font-size: 25px;" text="Emergia é um conceito usado para quantificar a energia consumida durante a produção de bens ou serviços, levando em consideração não apenas a energia direta utilizada, mas também a energia indireta envolvida em todo o processo de produção. A emergia é medida em unidades de energia solar equivalente (sej), ou seja, ela traduz toda a energia envolvida em um processo para uma quantidade equivalente de energia solar. Esse conceito é útil para avaliar o valor real dos recursos naturais e entender a sustentabilidade e eficiência dos sistemas produtivos em termos energéticos." textAlignment="JUSTIFY" wrapText="true" />
+                <Separator prefHeight="2.0" />
+
+                <!-- Cabeçalho -->
+                <HBox alignment="CENTER" spacing="10">
+                    <children>
+                        <ImageView fx:id="Imagem1" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@JavaLogo.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="titleLabel2" alignment="CENTER" maxWidth="Infinity" style="-fx-font-size: 30px; -fx-font-weight: bold;" text="Calcular Emergia necessária para aprender Java" textAlignment="CENTER" wrapText="true" />
+                        <ImageView fx:id="Imagem2" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@JavaLogo.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+
+                <!-- Computador -->
+                <VBox alignment="CENTER" spacing="15" style="-fx-padding: 50 0 0 0;">
+                    <children>
+                        <Label style="-fx-font-size: 30px;" text="Emergia do Computador:" />
+                        <HBox alignment="CENTER" spacing="20">
+                            <children>
+                                <Label fx:id="energia" minWidth="200" style="-fx-font-size: 25px;" text="Energia (J):" />
+                                <TextField fx:id="myTextField1" prefWidth="400" style="-fx-font-size: 25px;" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="20">
+                            <children>
+                                <Label fx:id="transformidade" minWidth="200" style="-fx-font-size: 25px;" text="Transformidade (sej/J):" />
+                                <TextField fx:id="myTextField2" prefWidth="400" style="-fx-font-size: 25px;" />
+                            </children>
+                        </HBox>
+                        <VBox alignment="CENTER" spacing="10">
+                            <children>
+                                <Button fx:id="MeuBotao" onAction="#calcularEmergiaComputador" style="-fx-font-size: 25px;" text="Calcular Emergia" />
+                                <Label fx:id="ResultadoComputador" style="-fx-font-size: 20px;" text="Resultado Computador" />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+
+                <!-- Wifi -->
+                <VBox alignment="CENTER" spacing="15" style="-fx-padding: 50 0 0 0;">
+                    <children>
+                        <Label style="-fx-font-size: 30px;" text="Emergia do Wifi:" />
+                        <HBox alignment="CENTER" spacing="20">
+                            <children>
+                                <Label fx:id="energia1" minWidth="200" style="-fx-font-size: 25px;" text="Energia (J):" />
+                                <TextField fx:id="myTextField11" prefWidth="400" style="-fx-font-size: 25px;" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="20">
+                            <children>
+                                <Label fx:id="transformidade1" minWidth="200" style="-fx-font-size: 25px;" text="Transformidade (sej/J):" />
+                                <TextField fx:id="myTextField21" prefWidth="400" style="-fx-font-size: 25px;" />
+                            </children>
+                        </HBox>
+                        <VBox alignment="CENTER" spacing="10">
+                            <children>
+                                <Button fx:id="MeuBotao1" onAction="#calcularEmergiaWifi" style="-fx-font-size: 25px;" text="Calcular Emergia" />
+                                <Label fx:id="ResultadoWifi" style="-fx-font-size: 20px;" text="Resultado Wifi" />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+
+                <!-- Estudante -->
+                <VBox alignment="CENTER" spacing="15" style="-fx-padding: 50 0 0 0;">
+                    <children>
+                        <Label style="-fx-font-size: 30px;" text="Emergia do Estudante:" />
+                        <HBox alignment="CENTER" spacing="20">
+                            <children>
+                                <Label fx:id="energia2" minWidth="200" style="-fx-font-size: 25px;" text="Energia (J):" />
+                                <TextField fx:id="myTextField12" prefWidth="400" style="-fx-font-size: 25px;" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <!-- Alimentos -->
+                <VBox alignment="CENTER" spacing="10">
+                    <children>
+                        <Label style="-fx-font-size: 30px; -fx-font-weight: bold;" text="Escolha até 2 alimentos:" />
+                        <GridPane alignment="CENTER" hgap="20" vgap="10">
+                            <children>
+                                <CheckBox fx:id="checkArroz" style="-fx-font-size: 30px;" text="Arroz" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <CheckBox fx:id="checkBatata" style="-fx-font-size: 30px;" text="Batata" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                <CheckBox fx:id="checkPeixe" style="-fx-font-size: 30px;" text="Peixe" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <CheckBox fx:id="checkOvos" style="-fx-font-size: 30px;" text="Ovos" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <CheckBox fx:id="checkLeite" style="-fx-font-size: 30px;" text="Leite" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                <CheckBox fx:id="checkCarneBovina" style="-fx-font-size: 30px;" text="Carne Bovina" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                            </children>
+                            <columnConstraints>
+                                <ColumnConstraints />
+                                <ColumnConstraints />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints />
+                                <RowConstraints />
+                                <RowConstraints />
+                            </rowConstraints>
+                        </GridPane>
+                    </children>
+                </VBox>
+
+                <VBox fx:id="ResultadoEstudante" alignment="CENTER" spacing="10">
+                    <children>
+                        <Button fx:id="MeuBotao12" onAction="#calcularEmergiaEstudante" style="-fx-font-size: 25px;" text="Calcular Emergia" />
+                        <Label fx:id="ResultadoWifi1" style="-fx-font-size: 20px;" text="Resultado Estudante" />
+                    </children>
+                </VBox>
+                
+	<VBox fx:id="RelatorioVBox" spacing="20" alignment="TOP_CENTER" style="-fx-padding: 30;">
+    <children>
+        <Label fx:id="titleLabel21" alignment="CENTER" maxWidth="Infinity" style="-fx-font-size: 30px; -fx-font-weight: bold;" text="Relatório:" textAlignment="CENTER" wrapText="true" />
+        <GridPane hgap="20" vgap="15" alignment="TOP_LEFT">
+            <children>
+                <Label style="-fx-font-size: 25px;" text="Emergia Computador:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label fx:id="resultadoEmergiaPC" style="-fx-font-size: 25px; -fx-padding: 0 0 0 100;" text="0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label style="-fx-font-size: 25px;" text="Emergia Wifi:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label fx:id="resultadoEmergiaWifi" style="-fx-font-size: 25px; -fx-padding: 0 0 0 100;" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label style="-fx-font-size: 25px;" text="Emergia Estudante:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label fx:id="resultadoEmergiaEstudante" style="-fx-font-size: 25px; -fx-padding: 0 0 0 100;" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label style="-fx-font-size: 25px;" text="Alimentos Selecionados:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <Label fx:id="resultadoAlimentos" style="-fx-font-size: 25px; -fx-padding: 0 0 0 100;" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <Label style="-fx-font-size: 25px;" text="Emergia Total:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <Label fx:id="resultadoEmergiaTotal" style="-fx-font-size: 25px; -fx-font-weight: bold; -fx-padding: 0 0 0 100;" text="zzzzz" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            </children>
+        </GridPane>
+    </children>
+	</VBox>
+
+            </children>
+        </VBox>
+    </content>
+</ScrollPane>
