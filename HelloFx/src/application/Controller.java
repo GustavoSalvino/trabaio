@@ -1,17 +1,23 @@
 package application;
 
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.chart.PieChart;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import java.text.DecimalFormat;
 
 public class Controller {
 
@@ -53,7 +59,6 @@ public class Controller {
         String formatado = df.format(valor);
         return formatado.replace("E+", "e").replace("E", "e");
     }
-
 
     @FXML
     public void calcularEmergiaComputador() {
@@ -142,4 +147,40 @@ public class Controller {
         resultadoEmergiaEstudante.setText("Emergia: " + formatarCientifico(resultadoEstudante) + " sej");
         resultadoEmergiaTotal.setText("Emergia total: " + formatarCientifico(resultadoTotal) + " sej");
     }
+    
+    @FXML
+    private void abrirGrafico(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("somexyz.fxml"));
+            Parent root = loader.load();
+            loader.<Controller>getController().atualizarGrafico(resultadoComputador, resultadoWifi, resultadoEstudante);
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Gráfico");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private PieChart chartPie;
+
+    @FXML
+    public void initialize() {
+        atualizarGrafico(resultadoComputador, resultadoWifi, resultadoEstudante);
+    }
+
+    public void atualizarGrafico(double computador, double wifi, double estudante) {
+        if (chartPie != null) {
+            chartPie.setData(FXCollections.observableArrayList(
+                new PieChart.Data("Emergia Computador", computador),
+                new PieChart.Data("Emergia Wi-Fi", wifi),
+                new PieChart.Data("Emergia Corpo Humano", estudante)
+            ));
+        }
+    }
+
 }
+

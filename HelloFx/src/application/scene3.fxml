@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<ScrollPane fx:id="scrollPane" fitToHeight="false" fitToWidth="true" prefHeight="2230.0" prefWidth="841.0" style="-fx-background: #f6f8f0; -fx-background-color: #f6f8f0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<ScrollPane fx:id="EmergiaTotalLabel" fitToHeight="false" fitToWidth="true" prefHeight="2610.0" prefWidth="841.0" style="-fx-background: #f6f8f0; -fx-background-color: #f6f8f0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
     <content>
         <VBox alignment="TOP_CENTER" spacing="10" style="-fx-padding: 20;">
             <children>
@@ -153,10 +153,10 @@
                     </children>
                 </VBox>
                 
-	<VBox fx:id="RelatorioVBox" spacing="20" alignment="TOP_CENTER" style="-fx-padding: 30;">
+	<VBox fx:id="RelatorioVBox" alignment="TOP_CENTER" spacing="20" style="-fx-padding: 30;">
     <children>
         <Label fx:id="titleLabel21" alignment="CENTER" maxWidth="Infinity" style="-fx-font-size: 30px; -fx-font-weight: bold;" text="Relatório:" textAlignment="CENTER" wrapText="true" />
-        <GridPane hgap="20" vgap="15" alignment="TOP_LEFT">
+        <GridPane alignment="TOP_LEFT" hgap="20" vgap="15">
             <children>
                 <Label style="-fx-font-size: 25px;" text="Emergia Computador:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                 <Label fx:id="resultadoEmergiaPC" style="-fx-font-size: 25px; -fx-padding: 0 0 0 100;" text="0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
@@ -173,9 +173,25 @@
                 <Label style="-fx-font-size: 25px;" text="Emergia Total:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
                 <Label fx:id="resultadoEmergiaTotal" style="-fx-font-size: 25px; -fx-font-weight: bold; -fx-padding: 0 0 0 100;" text="zzzzz" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             </children>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
         </GridPane>
     </children>
 	</VBox>
+            <VBox fx:id="RelatorioVBox1" alignment="TOP_CENTER" spacing="20" style="-fx-padding: 30;">
+               <children>
+                    <Button onAction="#abrirGrafico" text="Clique para visualizar o Gráfico" alignment="CENTER" maxWidth="Infinity" style="-fx-font-size: 30px; -fx-font-weight: bold;" textAlignment="CENTER" wrapText="true" />
+               </children>
+            </VBox>
 
             </children>
         </VBox>
